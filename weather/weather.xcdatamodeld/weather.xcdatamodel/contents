@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="15A178w" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="SavedCity" representedClassName="weather.SavedCity" syncable="YES">
+        <attribute name="sCityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sCountry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="weather.User" syncable="YES">
+        <attribute name="uChosenLocationID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="uChosenLocationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uCurrentCondition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uCurrentHumidity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uCurrentLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="uCurrentLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="uCurrentPollution" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uCurrentTemperature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uCurrentWind" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SavedCity" positionX="-36" positionY="9" width="128" height="90"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="180"/>
+    </elements>
+</model>
