@@ -98,6 +98,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let user = User.getUser()!
             if user.uChosenLocationID.integerValue == cUser.ChosenLocationCurrent {
                 cell.iCity.text = user.uChosenLocationName
+                //cell.iCity.text = NSLocalizedString(user.uChosenLocationName, comment: "saved city name")
                 cell.iTemp.text = "\(user.uCurrentTemperature)"
                 cell.iCondition.text = user.uCurrentCondition
                 //cell.iPollution.text = user.uCurrentPollution
@@ -135,7 +136,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete") { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "删除") { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
             SavedCity.removeCity(self.data[indexPath.row - 1])
             self.data.removeAtIndex(indexPath.row - 1)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -145,7 +146,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            println("Delete one")
         }
     }
 
