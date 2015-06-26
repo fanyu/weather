@@ -546,6 +546,13 @@
                                     <outlet property="delegate" destination="kJH-1C-rEa" id="qOR-cR-cvg"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如果世界不改变 生活也会缺乏色彩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lh0-mv-K7g">
+                                <rect key="frame" x="162" y="525" width="275.5" height="21.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -553,9 +560,27 @@
                         <constraints>
                             <constraint firstItem="fZa-dy-8R0" firstAttribute="leading" secondItem="Up4-Vo-eAF" secondAttribute="leadingMargin" constant="-16" id="1Qf-T7-KBj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fZa-dy-8R0" secondAttribute="trailing" constant="-16" id="4dd-gu-Z04"/>
+                            <constraint firstItem="Hyz-8N-81T" firstAttribute="top" secondItem="lh0-mv-K7g" secondAttribute="bottom" constant="53.5" id="Apx-aD-M1g"/>
+                            <constraint firstItem="Hyz-8N-81T" firstAttribute="top" secondItem="lh0-mv-K7g" secondAttribute="bottom" constant="36" id="PH1-Mi-6HE"/>
+                            <constraint firstAttribute="centerX" secondItem="lh0-mv-K7g" secondAttribute="centerX" constant="-9.25" id="TIH-WM-C8Q"/>
+                            <constraint firstItem="Hyz-8N-81T" firstAttribute="top" secondItem="lh0-mv-K7g" secondAttribute="bottom" constant="36" id="TbA-yj-LmN"/>
+                            <constraint firstAttribute="centerX" secondItem="lh0-mv-K7g" secondAttribute="centerX" constant="-9.25" id="bUp-Ng-AUq"/>
+                            <constraint firstItem="Hyz-8N-81T" firstAttribute="top" secondItem="lh0-mv-K7g" secondAttribute="bottom" constant="36" id="cba-VO-Tdw"/>
+                            <constraint firstAttribute="centerX" secondItem="lh0-mv-K7g" secondAttribute="centerX" constant="-9.25" id="ecA-MA-BIN"/>
+                            <constraint firstAttribute="centerX" secondItem="lh0-mv-K7g" secondAttribute="centerX" id="fEt-Dg-vzh"/>
                             <constraint firstItem="fZa-dy-8R0" firstAttribute="top" secondItem="qqX-db-AhJ" secondAttribute="bottom" id="hcl-XG-Jes"/>
                             <constraint firstItem="Hyz-8N-81T" firstAttribute="top" secondItem="fZa-dy-8R0" secondAttribute="bottom" id="sC4-2r-al8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="TIH-WM-C8Q"/>
+                                <exclude reference="bUp-Ng-AUq"/>
+                                <exclude reference="ecA-MA-BIN"/>
+                                <exclude reference="PH1-Mi-6HE"/>
+                                <exclude reference="TbA-yj-LmN"/>
+                                <exclude reference="cba-VO-Tdw"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="8mD-zg-9yw" appends="YES" id="Iq5-zL-ekn"/>
                         </connections>
