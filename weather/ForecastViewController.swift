@@ -16,11 +16,11 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func tapGesture(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBOutlet weak var hidedText: UILabel!
+//    @IBOutlet weak var hidedText: UILabel!
 
-    @IBAction func buttonTapped(sender: AnyObject) {
-        hidedText.hidden = false
-    }
+//    @IBAction func buttonTapped(sender: AnyObject) {
+//        hidedText.hidden = false
+//    }
     
     
     // 1 = Sunday, adjusted to our structure -> added +1
