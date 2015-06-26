@@ -191,58 +191,12 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
                     // get sunrise and sunset 
                     var sunrise = json["sys"]["sunrise"].doubleValue
                     var sunset = json["sys"]["sunset"].doubleValue
+                    var upSet = self.service.sunUpSetTime(sunrise, sunSet: sunset)
+                    self.sunriseTitle.setTitle(upSet.up, forState: .Normal)
+                    self.sunsetTitle.setTitle(upSet.down, forState: .Normal)
+                    self.up = upSet.riseTime
+                    self.down = upSet.setTime
                     
-                    var rise: NSDate = NSDate(timeIntervalSince1970: sunrise)
-                    var set: NSDate = NSDate(timeIntervalSince1970: sunset)
-                    
-                    println("Sunrise:\(rise)")
-                    println("Sunset:\(set)")
-                    
-                    
-                    var hourUp: Int = NSCalendar.currentCalendar().components(.CalendarUnitHour, fromDate: NSDate(timeIntervalSince1970: sunrise)).hour
-                    var hourDown: Int = NSCalendar.currentCalendar().components(.CalendarUnitHour, fromDate: NSDate(timeIntervalSince1970: sunset)).hour
-                    
-                    var minUp = NSCalendar.currentCalendar().components(.CalendarUnitMinute, fromDate: NSDate(timeIntervalSince1970: sunrise)).minute
-                    var minDown: Int = NSCalendar.currentCalendar().components(.CalendarUnitMinute, fromDate: NSDate(timeIntervalSince1970: sunset)).minute
-                    
-                    var day = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitDay, fromDate: NSDate(timeIntervalSince1970: sunset)).day
-
-                    var dateFormator = NSDateFormatter()
-                    dateFormator.stringFromDate(rise)
-                    
-                    println("day\(day)")
-                    println("HourUp:\(hourUp)")
-                    println("HourDown:\(hourDown)")
-                    println("MinUp:\(minUp)")
-                    println("MinDown:\(minDown)")
-                    
-                    self.up = "\(hourUp):\(minUp)"
-                    self.down = "\(hourDown):\(minDown)"
-                    
-                    var hourUpStr: String = " "
-                    var hourDownStr: String = " "
-                    
-                    
-                    switch hourUp {
-                    case 3: hourUpStr = "三时升"
-                    case 4: hourUpStr = "四时升"
-                    case 5: hourUpStr = "五时升"
-                    case 6: hourUpStr = "六时升"
-                    case 7: hourUpStr = "七时升"
-                    default:hourUpStr = "无数据"
-                    }
-                    switch hourDown {
-                    case 15: hourDownStr = "三时落"
-                    case 16: hourDownStr = "四时落"
-                    case 17: hourDownStr = "五时落"
-                    case 18: hourDownStr = "六时落"
-                    case 19: hourDownStr = "七时落"
-                    case 20: hourDownStr = "八时落"
-                    default:hourDownStr = "无数据"
-                    }
-                    self.sunriseTitle.setTitle(hourUpStr, forState: .Normal)
-                    self.sunsetTitle.setTitle(hourDownStr, forState: .Normal)
-
                     
                     weatherService.saveContext()
                     

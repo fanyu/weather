@@ -149,7 +149,7 @@ public class weatherService {
         } else if condition <= 962 {
             return ("飓风", "待屋里")
         } else {
-            return ("什么鬼", "无乱用")
+            return ("什么鬼", "无用")
         }
     }
     
@@ -229,6 +229,43 @@ public class weatherService {
             str = "已热死"
         }
         return (temp!, str!)
+    }
+    
+    public func sunUpSetTime(sunRise: Double, sunSet: Double) ->(up: String, down: String, riseTime: String, setTime: String) {
+        
+        var dataFormater = NSDateFormatter()
+        dataFormater.dateFormat = "hh:mm"
+        var riseTime = dataFormater.stringFromDate(NSDate(timeIntervalSince1970: sunRise))
+        var setTime = dataFormater.stringFromDate(NSDate(timeIntervalSince1970: sunSet))
+        
+        var riseHour = riseTime.componentsSeparatedByString(":")[0]
+        var setHour = setTime.componentsSeparatedByString(":")[0]
+
+        println("------Up:\(riseHour)")
+        println("------Set:\(setHour)")
+        
+        var hourUpStr: String = " "
+        var hourDownStr: String = " "
+        
+        switch riseHour {
+        case "03": hourUpStr = "三时升"
+        case "04": hourUpStr = "四时升"
+        case "05": hourUpStr = "五时升"
+        case "06": hourUpStr = "六时升"
+        case "07": hourUpStr = "七时升"
+        default:hourUpStr = "无数据"
+        }
+        switch setHour {
+        case "03": hourDownStr = "三时落"
+        case "04": hourDownStr = "四时落"
+        case "05": hourDownStr = "五时落"
+        case "06": hourDownStr = "六时落"
+        case "07": hourDownStr = "七时落"
+        case "08": hourDownStr = "八时落"
+        default:hourDownStr = "无数据"
+        }
+        
+        return (hourUpStr, hourDownStr, riseTime, setTime)
     }
     
     static func saveContext() {
