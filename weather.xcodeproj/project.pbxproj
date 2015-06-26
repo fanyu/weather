@@ -10,6 +10,8 @@
 		7C2191EE1B3943AE00D4C84A /* weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C2191EC1B3943AE00D4C84A /* weather.xcdatamodeld */; };
 		7C24ED741B3BEF6800BC399A /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7C24ED731B3BEF6800BC399A /* countries.txt */; };
 		7C26F7EA1B3D243100A97C6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C26F7E91B3D243100A97C6F /* Images.xcassets */; };
+		7C26F7EE1B3D39F000A97C6F /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26F7ED1B3D39F000A97C6F /* ForecastViewController.swift */; };
+		7C26F7F21B3D3EC600A97C6F /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26F7F11B3D3EC600A97C6F /* ForecastCell.swift */; };
 		7C375EA71B19B904004BF1C3 /* weatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C375EA61B19B904004BF1C3 /* weatherService.swift */; };
 		7C55F8DF1B3164B200F2A21D /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55F8DE1B3164B200F2A21D /* LocationCell.swift */; };
 		7C5B75271B185944008A788F /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B75261B185944008A788F /* BubbleButton.swift */; };
@@ -41,6 +43,8 @@
 		7C2191ED1B3943AE00D4C84A /* weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = weather.xcdatamodel; sourceTree = "<group>"; };
 		7C24ED731B3BEF6800BC399A /* countries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
 		7C26F7E91B3D243100A97C6F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7C26F7ED1B3D39F000A97C6F /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		7C26F7F11B3D3EC600A97C6F /* ForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		7C375EA61B19B904004BF1C3 /* weatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weatherService.swift; sourceTree = "<group>"; };
 		7C55F8DE1B3164B200F2A21D /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		7C5B75261B185944008A788F /* BubbleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				7C8F0BFA1B1412C900D8D87D /* RootViewController.swift */,
 				7C7D1D361B2AF74000A00A10 /* ListViewController.swift */,
 				7CE0463B1B32B7220054E09F /* SearchLocationViewController.swift */,
+				7C26F7ED1B3D39F000A97C6F /* ForecastViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				7C55F8DE1B3164B200F2A21D /* LocationCell.swift */,
+				7C26F7F11B3D3EC600A97C6F /* ForecastCell.swift */,
 				7C8F0C011B1412C900D8D87D /* LaunchScreen.xib */,
 				7C8F0BFC1B1412C900D8D87D /* Main.storyboard */,
 			);
@@ -345,12 +351,14 @@
 				7C375EA71B19B904004BF1C3 /* weatherService.swift in Sources */,
 				7C2191EE1B3943AE00D4C84A /* weather.xcdatamodeld in Sources */,
 				7CA1826C1B30511D0023FBDB /* SavedCity.swift in Sources */,
+				7C26F7F21B3D3EC600A97C6F /* ForecastCell.swift in Sources */,
 				7C8F0BFB1B1412C900D8D87D /* RootViewController.swift in Sources */,
 				7CE0463C1B32B7220054E09F /* SearchLocationViewController.swift in Sources */,
 				7CA182681B3037080023FBDB /* User.swift in Sources */,
 				7C55F8DF1B3164B200F2A21D /* LocationCell.swift in Sources */,
 				7C5B75271B185944008A788F /* BubbleButton.swift in Sources */,
 				7C8F0BF91B1412C900D8D87D /* AppDelegate.swift in Sources */,
+				7C26F7EE1B3D39F000A97C6F /* ForecastViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

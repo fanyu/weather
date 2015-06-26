@@ -15,9 +15,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     var data = SavedCity.getAllCities() ?? [SavedCity]()
-    var currentData = [[NSObject: AnyObject?]]()
-    var service = weatherService()
-    
+    var currentData = [[NSObject: AnyObject?]]()    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +51,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     for (i,_) in enumerate(l) {
                         var country = l[i]["sys"]["country"].stringValue
                         var city = l[i]["name"].stringValue
-                        var temp = self.service.convertTemperature(country, temperature: l[i]["main"]["temp"].doubleValue).0
-                        var condition = self.service.conditionJudge(l[i]["weather"][0]["id"].intValue).0
+                        var temp = weatherService.convertTemperature(country, temperature: l[i]["main"]["temp"].doubleValue).0
+                        var condition = weatherService.conditionJudge(l[i]["weather"][0]["id"].intValue).0
                         //var pollution = self.getPollutionInfo(city, token: pm25Params.token, stations: pm25Params.stations).str
                         
                         self.currentData.append([

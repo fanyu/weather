@@ -16,7 +16,7 @@ import UIKit
 struct cGeneral {
     static let ChangeUnitNotification = "ChangeUnitNotification"
     static let ChangeSelectedCity = "ChangeSelectedCity"
-    static let NeedReloadForecastTVC = "NeedReloadForecastTVC"
+    static let NeedReloadForecastTVC = "NeedReloadForecastVC"
     static let appBlackColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
 }
 
@@ -27,6 +27,8 @@ public enum Status {
 
 struct cForecast {
     static let kTemp = "temp"
+    static let KTempLow = "tempLow"
+    static let KTempHigh = "tempHigh"
     static let kDesc = "desc"
     static let kPoll = "poll"
 }
@@ -72,7 +74,7 @@ public class weatherService {
         }
     }
     
-    public func conditionJudge(condition: Int) ->(String, String){
+    static func conditionJudge(condition: Int) ->(String, String){
         
         if condition < 300 {
             return ("雷阵雨", "等等呗")
@@ -153,7 +155,7 @@ public class weatherService {
         }
     }
     
-    public func humidityJudge(humidity: Int) ->String {
+    static func humidityJudge(humidity: Int) ->String {
         if humidity <= 20 {
             return "极干燥"
         } else if humidity <= 40 {
@@ -167,7 +169,7 @@ public class weatherService {
         }
     }
     
-    public func windJudge(windSpeed: Float) ->String {
+    static func windJudge(windSpeed: Float) ->String {
         if windSpeed < 1 {
             return "无风"
         } else if windSpeed < 12 {
@@ -197,16 +199,16 @@ public class weatherService {
     
 
     
-    public func convertTemperature(country: String, temperature: Double) ->(String, String) {
+    static func convertTemperature(country: String, temperature: Double) ->(String, String) {
         var str: String?
         var temp: String?
-        var convertedT: Double?
+        var convertedT: Int?
         if country == "US" {
-            convertedT = round(((temperature - 273.5) * 1.8) + 32)
-            temp = "\(convertedT!)℉"
+            convertedT = Int(round(((temperature - 273.5) * 1.8) + 32))
+            temp = "\(convertedT!)"
         } else {
-            convertedT = round(temperature - 273.5)
-            temp = "\(convertedT!)℃"
+            convertedT = Int(round(temperature - 273.5))
+            temp = "\(convertedT!)"
         }
         
         if convertedT < -20 {
@@ -231,7 +233,7 @@ public class weatherService {
         return (temp!, str!)
     }
     
-    public func sunUpSetTime(sunRise: Double, sunSet: Double) ->(up: String, down: String, riseTime: String, setTime: String) {
+    static func sunUpSetTime(sunRise: Double, sunSet: Double) ->(up: String, down: String, riseTime: String, setTime: String) {
         
         var dataFormater = NSDateFormatter()
         dataFormater.dateFormat = "h:mm"
@@ -240,9 +242,6 @@ public class weatherService {
         
         var riseHour = riseTime.componentsSeparatedByString(":")[0]
         var setHour = setTime.componentsSeparatedByString(":")[0]
-
-        println("------Up:\(riseHour)")
-        println("------Set:\(setHour)")
         
         var hourUpStr: String = " "
         var hourDownStr: String = " "
@@ -266,6 +265,13 @@ public class weatherService {
         }
         
         return (hourUpStr, hourDownStr, riseTime, setTime)
+    }
+    
+    static func getDayOfWeek() ->Int {
+        let todayDate = NSDate()
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let myWeek = myCalendar!.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: todayDate)
+        return myWeek
     }
     
     static func saveContext() {

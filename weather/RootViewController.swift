@@ -27,10 +27,12 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
     @IBOutlet weak var tryLoading: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
         
+    
+    
     // weather info update when tap button
     var country: String = ""
     
-    var tempeture: (String, String) = ("", "") { didSet {temperatureTitle.setTitle(tempeture.1, forState: UIControlState.Highlighted) } }
+    //var tempeture: (String, String) = ("", "") { didSet {temperatureTitle.setTitle(tempeture.1, forState: UIControlState.Highlighted) } }
     
     var windSpeed: Float = 0 { didSet { windTitle.setTitle("\(windSpeed)级", forState: UIControlState.Highlighted) } }
     
@@ -42,13 +44,6 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
     
     var up: String = "" { didSet { sunriseTitle.setTitle(up, forState: UIControlState.Highlighted) } }
     var down: String = "" { didSet { sunsetTitle.setTitle(down, forState: UIControlState.Highlighted) } }
-
-    // pollution token
-//    var token: String = "5j1znBVAsnSf5xQyNQyq"
-//    var stations: String = "no"
-    
-    // servise
-    let service = weatherService()
     
     // refresh
     var refreshControl: UIRefreshControl!
@@ -67,7 +62,7 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
         case 0: humidityTitle.setTitle("\(humidity)%", forState: UIControlState.Highlighted)
         case 1: conditionTitle.setImage(nil, forState: UIControlState.Highlighted)
         case 2: windTitle.setTitle("\(windSpeed)级", forState: UIControlState.Highlighted)
-        case 3: temperatureTitle.setImage(nil, forState: UIControlState.Highlighted)
+        //case 3: temperatureTitle.setImage(nil, forState: UIControlState.Highlighted)
         case 4: pollutionTitle.setImage(nil, forState: UIControlState.Highlighted)
         case 5: sunriseTitle.setTitle(up, forState: UIControlState.Highlighted)
         default : sunsetTitle.setTitle(down, forState: UIControlState.Highlighted)
@@ -91,9 +86,6 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
             }
             tryLoading.text = "Location not determined"
         }
-        
-        // icurrent image 
-        //iCurrent.hidden = User.getUser()?.uChosenLocationID.integerValue == cUser.ChosenLocationCurrent ? false : true ?? true
         
         // spinner indicator
         spinner.startAnimating()
@@ -130,8 +122,6 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
             url  = "http://api.openweathermap.org/data/2.5/weather?id=" + (User.getUser()?.uChosenLocationID.stringValue ?? "") + "&lang=zh_cn"
         }
         
-        //getSunUpSetTimeInfo(User.getUser()!.uCurrentLatitude, longitude: User.getUser()!.uCurrentLongitude)
-        
         Alamofire.request(.GET, url!).responseJSON() {
             (_, _, json, error) in
             if error != nil { // cannot get data
@@ -165,33 +155,35 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
                     u?.uCurrentPollution = pollutionStr
                     
                     // get and convert tempeture
-                    self.tempeture = self.service.convertTemperature(self.country, temperature: tempResult)
-                    let temp = self.tempeture.0
-                    self.temperatureTitle.setTitle("\(temp)", forState: .Normal)
+                    //self.tempeture = self.service.convertTemperature(self.country, temperature: tempResult)
+                    let temp = weatherService.convertTemperature(self.country, temperature: tempResult).0
+                    self.temperatureTitle.setTitle("\(temp)º", forState: .Normal)
                     u?.uCurrentTemperature = "\(temp)"
                     
                     // get condition
                     var condition = json["weather"][0]["id"].intValue
-                    self.conditionStr = self.service.conditionJudge(condition)
+                    self.conditionStr = weatherService.conditionJudge(condition)
                     self.conditionTitle.setTitle(self.conditionStr.0, forState: .Normal)
                     u?.uCurrentCondition = self.conditionStr.0
                     
                     // get wind
                     self.windSpeed = json["wind"]["speed"].floatValue
-                    var windStr = self.service.windJudge(self.windSpeed)
+                    var windStr = weatherService.windJudge(self.windSpeed)
                     self.windTitle.setTitle(windStr, forState: .Normal)
                     u?.uCurrentWind = windStr
                     
                     // get humidity 
                     self.humidity = json["main"]["humidity"].intValue
-                    var humidityStr = self.service.humidityJudge(self.humidity)
+                    var humidityStr = weatherService.humidityJudge(self.humidity)
                     self.humidityTitle.setTitle("\(humidityStr)", forState: .Normal)
                     u?.uCurrentHumidity = humidityStr
                     
                     // get sunrise and sunset 
                     var sunrise = json["sys"]["sunrise"].doubleValue
                     var sunset = json["sys"]["sunset"].doubleValue
-                    var upSet = self.service.sunUpSetTime(sunrise, sunSet: sunset)
+                    //var upp = weatherService.sunUpSetTime(2,sunSet: 2)
+                    //var upSet = self.service.sunUpSetTime(sunrise, sunSet: sunset)
+                    var upSet = weatherService.sunUpSetTime(sunrise, sunSet: sunset)
                     self.sunriseTitle.setTitle(upSet.up, forState: .Normal)
                     self.sunsetTitle.setTitle(upSet.down, forState: .Normal)
                     self.up = upSet.riseTime
@@ -200,6 +192,7 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
                     
                     weatherService.saveContext()
                     
+                    // need to reload forecast data
                     NSNotificationCenter.defaultCenter().postNotificationName(cGeneral.NeedReloadForecastTVC, object: nil)
                 }
             }
