@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C2191EE1B3943AE00D4C84A /* weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C2191EC1B3943AE00D4C84A /* weather.xcdatamodeld */; };
 		7C24ED741B3BEF6800BC399A /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7C24ED731B3BEF6800BC399A /* countries.txt */; };
+		7C26F7EA1B3D243100A97C6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C26F7E91B3D243100A97C6F /* Images.xcassets */; };
 		7C375EA71B19B904004BF1C3 /* weatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C375EA61B19B904004BF1C3 /* weatherService.swift */; };
 		7C55F8DF1B3164B200F2A21D /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55F8DE1B3164B200F2A21D /* LocationCell.swift */; };
 		7C5B75271B185944008A788F /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B75261B185944008A788F /* BubbleButton.swift */; };
@@ -16,7 +17,6 @@
 		7C8F0BF91B1412C900D8D87D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F0BF81B1412C900D8D87D /* AppDelegate.swift */; };
 		7C8F0BFB1B1412C900D8D87D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F0BFA1B1412C900D8D87D /* RootViewController.swift */; };
 		7C8F0BFE1B1412C900D8D87D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F0BFC1B1412C900D8D87D /* Main.storyboard */; };
-		7C8F0C001B1412C900D8D87D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F0BFF1B1412C900D8D87D /* Images.xcassets */; };
 		7C8F0C031B1412C900D8D87D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8F0C011B1412C900D8D87D /* LaunchScreen.xib */; };
 		7C8F0C0F1B1412C900D8D87D /* weatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8F0C0E1B1412C900D8D87D /* weatherTests.swift */; };
 		7CA182681B3037080023FBDB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA182671B3037080023FBDB /* User.swift */; };
@@ -40,6 +40,7 @@
 		453DB63165818E6E794FA7AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7C2191ED1B3943AE00D4C84A /* weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = weather.xcdatamodel; sourceTree = "<group>"; };
 		7C24ED731B3BEF6800BC399A /* countries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
+		7C26F7E91B3D243100A97C6F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7C375EA61B19B904004BF1C3 /* weatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weatherService.swift; sourceTree = "<group>"; };
 		7C55F8DE1B3164B200F2A21D /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		7C5B75261B185944008A788F /* BubbleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		7C8F0BF81B1412C900D8D87D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C8F0BFA1B1412C900D8D87D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7C8F0BFD1B1412C900D8D87D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7C8F0BFF1B1412C900D8D87D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7C8F0C021B1412C900D8D87D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7C8F0C081B1412C900D8D87D /* weatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C8F0C0D1B1412C900D8D87D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		7C8F0BF61B1412C900D8D87D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C8F0BFF1B1412C900D8D87D /* Images.xcassets */,
+				7C26F7E91B3D243100A97C6F /* Images.xcassets */,
 				7C24ED731B3BEF6800BC399A /* countries.txt */,
 				7C2191EC1B3943AE00D4C84A /* weather.xcdatamodeld */,
 				7C8F0BF71B1412C900D8D87D /* Info.plist */,
@@ -273,8 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C8F0BFE1B1412C900D8D87D /* Main.storyboard in Resources */,
+				7C26F7EA1B3D243100A97C6F /* Images.xcassets in Resources */,
 				7C8F0C031B1412C900D8D87D /* LaunchScreen.xib in Resources */,
-				7C8F0C001B1412C900D8D87D /* Images.xcassets in Resources */,
 				7C24ED741B3BEF6800BC399A /* countries.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

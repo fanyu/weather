@@ -234,7 +234,7 @@ public class weatherService {
     public func sunUpSetTime(sunRise: Double, sunSet: Double) ->(up: String, down: String, riseTime: String, setTime: String) {
         
         var dataFormater = NSDateFormatter()
-        dataFormater.dateFormat = "hh:mm"
+        dataFormater.dateFormat = "h:mm"
         var riseTime = dataFormater.stringFromDate(NSDate(timeIntervalSince1970: sunRise))
         var setTime = dataFormater.stringFromDate(NSDate(timeIntervalSince1970: sunSet))
         
@@ -248,20 +248,20 @@ public class weatherService {
         var hourDownStr: String = " "
         
         switch riseHour {
-        case "03": hourUpStr = "三时升"
-        case "04": hourUpStr = "四时升"
-        case "05": hourUpStr = "五时升"
-        case "06": hourUpStr = "六时升"
-        case "07": hourUpStr = "七时升"
+        case "3": hourUpStr = "三时升"
+        case "4": hourUpStr = "四时升"
+        case "5": hourUpStr = "五时升"
+        case "6": hourUpStr = "六时升"
+        case "7": hourUpStr = "七时升"
         default:hourUpStr = "无数据"
         }
         switch setHour {
-        case "03": hourDownStr = "三时落"
-        case "04": hourDownStr = "四时落"
-        case "05": hourDownStr = "五时落"
-        case "06": hourDownStr = "六时落"
-        case "07": hourDownStr = "七时落"
-        case "08": hourDownStr = "八时落"
+        case "3": hourDownStr = "三时落"
+        case "4": hourDownStr = "四时落"
+        case "5": hourDownStr = "五时落"
+        case "6": hourDownStr = "六时落"
+        case "7": hourDownStr = "七时落"
+        case "8": hourDownStr = "八时落"
         default:hourDownStr = "无数据"
         }
         
