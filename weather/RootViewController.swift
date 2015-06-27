@@ -26,14 +26,10 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
     // loading stuffs
     @IBOutlet weak var tryLoading: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-        
-    
     
     // weather info update when tap button
     var country: String = ""
-    
-    //var tempeture: (String, String) = ("", "") { didSet {temperatureTitle.setTitle(tempeture.1, forState: UIControlState.Highlighted) } }
-    
+
     var windSpeed: Float = 0 { didSet { windTitle.setTitle("\(windSpeed)级", forState: UIControlState.Highlighted) } }
     
     var humidity: Int = 0 { didSet { humidityTitle.setTitle("\(humidity)%", forState: UIControlState.Highlighted) } }
@@ -125,7 +121,7 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
         Alamofire.request(.GET, url!).responseJSON() {
             (_, _, json, error) in
             if error != nil { // cannot get data
-                self.tryLoading.text = "雷公电母睡觉中"
+                weatherService.showAlertWithText("雷公电母休息中", sender: self)
             } else { // successful get data
                 
                 self.tryLoading.text = nil   // set nil

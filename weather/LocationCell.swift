@@ -12,8 +12,5 @@ class LocationCell: UITableViewCell {
     
     @IBOutlet weak var iCity: UILabel!
     @IBOutlet weak var iTemp: UILabel!
-    @IBOutlet weak var iCondition: UILabel!
-    @IBOutlet weak var iCurrent: UIImageView!
-    //@IBOutlet weak var iPollution: UILabel!
-    
+    @IBOutlet weak var iCondition: UILabel!    
 }

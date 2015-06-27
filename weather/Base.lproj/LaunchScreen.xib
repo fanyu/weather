@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A204h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,15 +10,12 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天气泡" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="140" width="441" height="43"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch2" translatesAutoresizingMaskIntoConstraints="NO" id="6En-dd-x77">
+                    <rect key="frame" x="180" y="100" width="120" height="120"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="复杂的世界  简单的天气" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwH-zI-7d7">
-                    <rect key="frame" x="134.5" y="257" width="211" height="24"/>
+                    <rect key="frame" x="135" y="356" width="211" height="24"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -27,17 +23,27 @@
                 </label>
             </subviews>
             <animations/>
-            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstItem="uwH-zI-7d7" firstAttribute="top" secondItem="6En-dd-x77" secondAttribute="bottom" constant="57" id="1bG-4i-rVW"/>
+                <constraint firstItem="6En-dd-x77" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="5yF-xK-vA0"/>
+                <constraint firstItem="uwH-zI-7d7" firstAttribute="leading" secondItem="6En-dd-x77" secondAttribute="trailing" constant="-143" id="BFR-Jq-dzz"/>
+                <constraint firstAttribute="bottom" secondItem="uwH-zI-7d7" secondAttribute="bottom" constant="100" id="EJ0-rC-9hS"/>
+                <constraint firstAttribute="centerX" secondItem="6En-dd-x77" secondAttribute="centerX" id="b5t-lR-Fsy"/>
                 <constraint firstAttribute="centerX" secondItem="uwH-zI-7d7" secondAttribute="centerX" id="mg9-6h-xcd"/>
-                <constraint firstItem="uwH-zI-7d7" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="74" id="q1t-lD-Mr2"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="1bG-4i-rVW"/>
+                    <exclude reference="BFR-Jq-dzz"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="launch2" width="120" height="120"/>
+    </resources>
 </document>

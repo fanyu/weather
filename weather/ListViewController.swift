@@ -13,6 +13,7 @@ import SwiftyJSON
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var data = SavedCity.getAllCities() ?? [SavedCity]()
     var currentData = [[NSObject: AnyObject?]]()    
@@ -29,6 +30,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        activity.startAnimating()
         
         data = SavedCity.getAllCities() ?? [SavedCity]()
         tableView.reloadData()
@@ -47,6 +49,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             Alamofire.request(.GET, url).responseJSON() {
                 (_, _, json, error) in
                 if error == nil {
+                    
+                    self.activity.stopAnimating()
+                    self.activity.hidden = true
+                    
                     var l = JSON(json!)["list"]
                     for (i,_) in enumerate(l) {
                         var country = l[i]["sys"]["country"].stringValue
@@ -63,7 +69,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.tableView.reloadData()
                     }
                 } else {
-                    weatherService.showAlertWithText("Can't determine weather.", sender: self)
+                    weatherService.showAlertWithText("雷公电母休息中", sender: self)
                 }
             }
         }
@@ -96,29 +102,24 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let user = User.getUser()!
             if user.uChosenLocationID.integerValue == cUser.ChosenLocationCurrent {
                 cell.iCity.text = user.uChosenLocationName
-                //cell.iCity.text = NSLocalizedString(user.uChosenLocationName, comment: "saved city name")
                 cell.iTemp.text = "\(user.uCurrentTemperature)"
                 cell.iCondition.text = user.uCurrentCondition
-                //cell.iPollution.text = user.uCurrentPollution
-                cell.iCurrent.hidden = false
             } else {
-                cell.iCity.text = "当前地点"
+                cell.iCity.hidden = true
                 cell.iTemp.hidden = true
-                cell.iCondition.hidden = true
+                cell.iCondition.text = "当前所在的位置"
             }
     
         } else {
-            cell.iCurrent.hidden = true
             cell.iCity.text = data[indexPath.row - 1].sCityName
             if SavedCity.getAllCities()?.count == currentData.count {
                 let temp = currentData[indexPath.row - 1][cForecast.kTemp] as! String
                 cell.iTemp.text = "\(temp)"
                 cell.iCondition.text = currentData[indexPath.row - 1][cForecast.kDesc] as? String
-                //cell.iPollution.text = currentData[indexPath.row - 1][cForecast.kPoll] as? String
             } else {
                 cell.iTemp.text = "xxx"
                 cell.iCondition.text = "xxx"
-                //cell.iPollution.text = "xxx"
+                
             }
         }
         
@@ -152,7 +153,20 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        //return 60
+        let cellSize: CGFloat
+        let deviseSize = UIScreen.mainScreen().bounds.height
+        
+        switch deviseSize {
+        case 480: cellSize = 55 // 4
+        case 568: cellSize = 70 // 5
+        case 667: cellSize = 83 // 6
+        case 736: cellSize = 93 // plus
+        default: cellSize = 100 // ipad
+        }
+        
+        return cellSize
+
     }
 
 }

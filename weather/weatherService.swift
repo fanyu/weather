@@ -288,8 +288,8 @@ public class weatherService {
 
     static func showAlertWithText(text: String, sender: AnyObject) {
         
-        let a = UIAlertController(title: "App says:", message: text ?? "", preferredStyle: .Alert)
-        let ok = UIAlertAction(title: "OK", style: .Default, handler: { (ok) -> Void in})
+        let a = UIAlertController(title: "抱歉", message: text ?? "", preferredStyle: .Alert)
+        let ok = UIAlertAction(title: "检查网络", style: .Default, handler: { (ok) -> Void in})
         a.addAction(ok)
         if let s = sender as? UIViewController {
             sender.presentViewController(a, animated: true, completion: nil)

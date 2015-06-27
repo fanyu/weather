@@ -16,6 +16,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func tapGesture(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
+    @IBOutlet var activity: UIActivityIndicatorView!
 //    @IBOutlet weak var hidedText: UILabel!
 
 //    @IBAction func buttonTapped(sender: AnyObject) {
@@ -38,6 +39,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        activity.startAnimating()
     }
     
     
@@ -59,6 +61,9 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
             (_, _, json, e) in
             if e == nil {
                 
+                self.activity.stopAnimating()
+                self.activity.hidden = true
+                
                 var json = JSON(json!)
                 var list = json["list"]
                 if list.count > 5 {
@@ -78,10 +83,11 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
                             ])
                     }
                     self.tableView.reloadData()
-                } else {
-                    weatherService.showAlertWithText("Can't determine weather.", sender: self)
                 }
+            } else {
+                weatherService.showAlertWithText("雷公电母休息中", sender: self)
             }
+
         }
     }
     
@@ -110,8 +116,20 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80
+        
+        let cellSize: CGFloat
+        let deviseSize = UIScreen.mainScreen().bounds.height
+        
+        switch deviseSize {
+        case 480: cellSize = 55 // 4
+        case 568: cellSize = 70 // 5
+        case 667: cellSize = 83 // 6
+        case 736: cellSize = 93 // plus
+        default: cellSize = 100 // ipad
+        }
+        
+        return cellSize
     }
-
 }
