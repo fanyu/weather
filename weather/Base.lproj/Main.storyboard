@@ -261,7 +261,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Current" translatesAutoresizingMaskIntoConstraints="NO" id="Ywa-S0-QP9">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Current-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ywa-S0-QP9">
                                                     <rect key="frame" x="82.5" y="23" width="11" height="11"/>
                                                     <animations/>
                                                 </imageView>
@@ -546,8 +546,8 @@
                                     <outlet property="delegate" destination="kJH-1C-rEa" id="qOR-cR-cvg"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如果世界不改变 生活也会缺乏色彩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lh0-mv-K7g">
-                                <rect key="frame" x="162" y="525" width="275.5" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不变的明天  生活也会缺乏色彩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lh0-mv-K7g">
+                                <rect key="frame" x="177.5" y="525" width="244.5" height="21.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -601,6 +601,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Current" width="11" height="11"/>
+        <image name="Current-1" width="11" height="11"/>
     </resources>
 </document>
