@@ -8,16 +8,16 @@
         <!--Root View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="vXZ-lx-hvc" customClass="RootViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="vXZ-lx-hvc" customClass="RootViewController" customModule="weatherBubble" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="BubbleView" customModule="weather" customModuleProvider="target">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="BubbleView" customModule="weatherBubble" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ux-Sh-J1l" customClass="BubbleButton" customModule="weather" customModuleProvider="target">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ux-Sh-J1l" customClass="BubbleButton" customModule="weatherBubble" customModuleProvider="target">
                                 <rect key="frame" x="255" y="255" width="90" height="90"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.33754704990000001" green="0.85045770200000004" blue="0.33633900950000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rXh-LB-0Vb" customClass="BubbleButton" customModule="weather" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rXh-LB-0Vb" customClass="BubbleButton" customModule="weatherBubble" customModuleProvider="target">
                                 <rect key="frame" x="305" y="169" width="90" height="90"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,7 +59,7 @@
                                     <action selector="dataButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CgB-eu-vwI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbO-UI-OB5" customClass="BubbleButton" customModule="weather" customModuleProvider="target">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbO-UI-OB5" customClass="BubbleButton" customModule="weatherBubble" customModuleProvider="target">
                                 <rect key="frame" x="205" y="169" width="90" height="90"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,7 +74,7 @@
                                     <action selector="dataButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wsm-mZ-u8z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-GC-uV7" customClass="BubbleButton" customModule="weather" customModuleProvider="target">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-GC-uV7" customClass="BubbleButton" customModule="weatherBubble" customModuleProvider="target">
                                 <rect key="frame" x="205" y="341" width="90" height="90"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,7 +89,7 @@
                                     <action selector="dataButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dCQ-qJ-jsL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxG-Cx-FGZ" customClass="BubbleButton" customModule="weather" customModuleProvider="target">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxG-Cx-FGZ" customClass="BubbleButton" customModule="weatherBubble" customModuleProvider="target">
                                 <rect key="frame" x="305" y="341" width="90" height="90"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,7 +104,7 @@
                                     <action selector="dataButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pwc-Ir-Ng2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cAl-Ct-a6U" customClass="BubbleButton" customModule="weather" customModuleProvider="target">
+                            <button opaque="NO" tag="4" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cAl-Ct-a6U" customClass="BubbleButton" customModule="weatherBubble" customModuleProvider="target">
                                 <rect key="frame" x="355" y="255" width="90" height="90"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,7 +119,7 @@
                                     <action selector="dataButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g7q-Tl-obP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAt-Nm-oka" customClass="BubbleButton" customModule="weather" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAt-Nm-oka" customClass="BubbleButton" customModule="weatherBubble" customModuleProvider="target">
                                 <rect key="frame" x="155" y="255" width="90" height="90"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -216,6 +216,7 @@
                         <outlet property="currentLocation" destination="Mwz-eD-FtX" id="zV6-Uf-0Zg"/>
                         <outlet property="humidityTitle" destination="xAt-Nm-oka" id="YfY-Kn-Qix"/>
                         <outlet property="pollutionTitle" destination="cAl-Ct-a6U" id="2Yx-Z0-b1K"/>
+                        <outlet property="segueButton" destination="J0L-7m-Gop" id="SOe-Np-kc2"/>
                         <outlet property="spinner" destination="InG-rZ-mLm" id="aYu-mi-K72"/>
                         <outlet property="sunriseTitle" destination="TgE-GC-uV7" id="8mh-mP-2ID"/>
                         <outlet property="sunsetTitle" destination="zxG-Cx-FGZ" id="i0l-o3-Zgd"/>
@@ -231,7 +232,7 @@
         <!--List View Controller-->
         <scene sceneID="5Zn-Bc-cjo">
             <objects>
-                <viewController id="dqP-h8-QNv" customClass="ListViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dqP-h8-QNv" customClass="ListViewController" customModule="weatherBubble" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sCU-Jj-TcI"/>
                         <viewControllerLayoutGuide type="bottom" id="OKK-Qm-596"/>
@@ -247,7 +248,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="60" id="lNx-33-p4c" customClass="LocationCell" customModule="weather" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="60" id="lNx-33-p4c" customClass="LocationCell" customModule="weatherBubble" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lNx-33-p4c" id="CFz-5D-3XN">
@@ -328,7 +329,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="xl1-PZ-od2">
-                                <rect key="frame" x="290" y="540" width="20" height="20"/>
+                                <rect key="frame" x="290" y="530" width="20" height="20"/>
                                 <animations/>
                             </activityIndicatorView>
                         </subviews>
@@ -339,7 +340,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Wvr-Ac-jre" secondAttribute="trailing" constant="-16" id="4pP-rB-8Cv"/>
                             <constraint firstAttribute="centerX" secondItem="xl1-PZ-od2" secondAttribute="centerX" id="5ce-hJ-6if"/>
                             <constraint firstAttribute="centerX" secondItem="o0P-wC-79n" secondAttribute="centerX" constant="-0.5" id="BM2-53-ITg"/>
-                            <constraint firstItem="o0P-wC-79n" firstAttribute="top" secondItem="xl1-PZ-od2" secondAttribute="bottom" constant="6" id="BUg-fM-A7l"/>
+                            <constraint firstItem="o0P-wC-79n" firstAttribute="top" secondItem="xl1-PZ-od2" secondAttribute="bottom" constant="16" id="BUg-fM-A7l"/>
+                            <constraint firstAttribute="centerX" secondItem="xl1-PZ-od2" secondAttribute="centerX" id="Fg9-Gg-ZaE"/>
                             <constraint firstAttribute="centerX" secondItem="xl1-PZ-od2" secondAttribute="centerX" id="GSX-mp-fA0"/>
                             <constraint firstItem="o0P-wC-79n" firstAttribute="leading" secondItem="Wvr-Ac-jre" secondAttribute="trailing" constant="-332" id="Iem-eu-UAP"/>
                             <constraint firstAttribute="height" secondItem="xl1-PZ-od2" secondAttribute="height" constant="580" id="J8H-pr-tYa"/>
@@ -358,7 +360,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="5ce-hJ-6if"/>
                                 <exclude reference="GSX-mp-fA0"/>
+                                <exclude reference="a1o-km-Pak"/>
                                 <exclude reference="Iem-eu-UAP"/>
                                 <exclude reference="V0d-zb-VJE"/>
                                 <exclude reference="ZN2-qZ-o3j"/>
@@ -370,6 +374,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="activity" destination="xl1-PZ-od2" id="HIJ-ps-O1H"/>
+                        <outlet property="segueButton" destination="o0P-wC-79n" id="xtE-t9-KX2"/>
                         <outlet property="tableView" destination="Wvr-Ac-jre" id="rhF-tO-GjD"/>
                     </connections>
                 </viewController>
@@ -380,7 +385,7 @@
         <!--Search Location View Controller-->
         <scene sceneID="VoI-sj-NyP">
             <objects>
-                <viewController id="Yem-lS-0gP" customClass="SearchLocationViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yem-lS-0gP" customClass="SearchLocationViewController" customModule="weatherBubble" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pYR-2c-V9J"/>
                         <viewControllerLayoutGuide type="bottom" id="h4o-vv-cJp"/>
@@ -454,7 +459,7 @@
         <!--Forecast View Controller-->
         <scene sceneID="Dws-K2-Q8M">
             <objects>
-                <viewController id="kJH-1C-rEa" customClass="ForecastViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kJH-1C-rEa" customClass="ForecastViewController" customModule="weatherBubble" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qqX-db-AhJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Hyz-8N-81T"/>
@@ -470,7 +475,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="80" id="6hB-AC-Wrw" customClass="ForecastCell" customModule="weather" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="80" id="6hB-AC-Wrw" customClass="ForecastCell" customModule="weatherBubble" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hB-AC-Wrw" id="dg6-PU-ZF5">
@@ -603,6 +608,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="activity" destination="XVd-v4-BpT" id="YC5-NI-lBO"/>
+                        <outlet property="hidedText" destination="lh0-mv-K7g" id="HXc-vC-kaf"/>
                         <outlet property="tableView" destination="fZa-dy-8R0" id="zi4-e5-XFY"/>
                     </connections>
                 </viewController>

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C8F0BF21B1412C900D8D87D"
-               BuildableName = "weather.app"
-               BlueprintName = "weather"
-               ReferencedContainer = "container:weather.xcodeproj">
+               BuildableName = "weatherBubble.app"
+               BlueprintName = "weatherBubble"
+               ReferencedContainer = "container:weatherBubble.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C8F0C071B1412C900D8D87D"
-               BuildableName = "weatherTests.xctest"
-               BlueprintName = "weatherTests"
-               ReferencedContainer = "container:weather.xcodeproj">
+               BuildableName = "weatherBubbleTests.xctest"
+               BlueprintName = "weatherBubbleTests"
+               ReferencedContainer = "container:weatherBubble.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C8F0C071B1412C900D8D87D"
-               BuildableName = "weatherTests.xctest"
-               BlueprintName = "weatherTests"
-               ReferencedContainer = "container:weather.xcodeproj">
+               BuildableName = "weatherBubbleTests.xctest"
+               BlueprintName = "weatherBubbleTests"
+               ReferencedContainer = "container:weatherBubble.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C8F0BF21B1412C900D8D87D"
-            BuildableName = "weather.app"
-            BlueprintName = "weather"
-            ReferencedContainer = "container:weather.xcodeproj">
+            BuildableName = "weatherBubble.app"
+            BlueprintName = "weatherBubble"
+            ReferencedContainer = "container:weatherBubble.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C8F0BF21B1412C900D8D87D"
-            BuildableName = "weather.app"
-            BlueprintName = "weather"
-            ReferencedContainer = "container:weather.xcodeproj">
+            BuildableName = "weatherBubble.app"
+            BlueprintName = "weatherBubble"
+            ReferencedContainer = "container:weatherBubble.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C8F0BF21B1412C900D8D87D"
-            BuildableName = "weather.app"
-            BlueprintName = "weather"
-            ReferencedContainer = "container:weather.xcodeproj">
+            BuildableName = "weatherBubble.app"
+            BlueprintName = "weatherBubble"
+            ReferencedContainer = "container:weatherBubble.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

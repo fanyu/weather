@@ -74,7 +74,7 @@ public class weatherService {
         }
     }
     
-    static func conditionJudge(condition: Int) ->(String, String){
+    static func conditionJudge(condition: Int) ->(condition: String, str: String){
         
         if condition < 300 {
             return ("雷阵雨", "等等呗")
@@ -199,7 +199,7 @@ public class weatherService {
     
 
     
-    static func convertTemperature(country: String, temperature: Double) ->(String, String) {
+    static func convertTemperature(country: String, temperature: Double) ->(temp: String, str: String) {
         var str: String?
         var temp: String?
         var convertedT: Int?

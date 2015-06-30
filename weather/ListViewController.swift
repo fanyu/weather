@@ -15,8 +15,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
+    @IBOutlet weak var segueButton: UIButton!
     var data = SavedCity.getAllCities() ?? [SavedCity]()
     var currentData = [[NSObject: AnyObject?]]()    
+    var firstlaunch: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,13 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        activity.startAnimating()
+        
+        if firstlaunch {
+            firstlaunch = false
+            activity.hidden = true
+        } else {
+            activity.startAnimating()
+        }
         
         data = SavedCity.getAllCities() ?? [SavedCity]()
         tableView.reloadData()
@@ -167,6 +175,15 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cellSize
 
+    }
+    
+    // scroll view
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        segueButton.hidden = true
+    }
+
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        segueButton.hidden = false
     }
 
 }
