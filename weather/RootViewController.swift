@@ -65,10 +65,6 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
         }
     }
 
-    // segueButton
-    @IBOutlet weak var segueButton: UIButton!
-    var firstLaunch: Bool = true
-    
     // MARK: - viewDidload and memoryWarning
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,9 +85,6 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
         
         // spinner indicator
         spinner.startAnimating()
-        
-        // first launch
-        segueButton.hidden = true
         
         // notificaiton 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectedCityChanged", name: cGeneral.ChangeSelectedCity, object: nil)
@@ -130,7 +123,6 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
             if error != nil { // cannot get data
                 weatherService.showAlertWithText("雷公电母休息中", sender: self)
             } else { // successful get data
-                self.segueButton.hidden = false
                 
                 self.tryLoading.text = nil   // set nil
                 self.spinner.stopAnimating() // stop animating
@@ -155,6 +147,7 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
                     // get pm2.5
                     var pollutionStr = self.getPollutionInfo(city, token: pm25Params.token, stations: pm25Params.stations).str
                     self.pm2_5 = self.getPollutionInfo(city, token: pm25Params.token, stations: pm25Params.stations).pm2_5
+                    //self.pollutionTitle.setTitle("\(pollutionStr)", forState: .Normal)
                     u?.uCurrentPollution = pollutionStr
                     
                     // get and convert tempeture
@@ -202,7 +195,7 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
         }
     }
     
-    func getPollutionInfo(city: String, token: String, stations: String) ->(str:String, pm2_5: Int) {
+    func getPollutionInfo(city: String, token: String, stations: String) ->(str:String, pm2_5: Int)  {
         let url = "http://www.pm25.in/api/querys/pm2_5.json"
         let params = ["city":city, "token":token, "stations":stations]
         var pmStr = "A"
@@ -214,16 +207,10 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
                     pmStr = "无数据"
                     pm2_5 = 0
                     self.pollutionTitle.setTitle("\(pmStr)", forState: .Normal)
-                    println("\(errStr)")
+
                 } else {
                     let json = JSON(json!)
-                    pm2_5 = json[0]["pm2_5"].intValue
-                    
-                    var c = json[0]["area"].stringValue
-                    var q = json[0]["quality"].stringValue
-                    
-                    println("Area: \(c)")
-                    println("Quality: \(q)")
+                    pm2_5 = json["pm2_5"].intValue
                     
                     if pm2_5 < 50 {
                         pmStr = "空气优"

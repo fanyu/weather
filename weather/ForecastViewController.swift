@@ -17,8 +17,12 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBOutlet var activity: UIActivityIndicatorView!
-    @IBOutlet weak var hidedText: UILabel!
+//    @IBOutlet weak var hidedText: UILabel!
 
+//    @IBAction func buttonTapped(sender: AnyObject) {
+//        hidedText.hidden = false
+//    }
+    
     
     // 1 = Sunday, adjusted to our structure -> added +1
     let dateOfWeek = weatherService.getDayOfWeek() - 1
@@ -30,9 +34,10 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "needReloadData", name: cGeneral.NeedReloadForecastTVC, object: nil)
         updateUI()
-        
+<<<<<<< HEAD
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged", name: UIDeviceOrientationDidChangeNotification, object: nil)
-        
+=======
+>>>>>>> parent of d2484ad... Done
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -41,13 +46,18 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         activity.startAnimating()
     }
     
+<<<<<<< HEAD
     func orientationChanged() {
         let orientation = UIDevice.currentDevice().orientation
         if UIDeviceOrientationIsLandscape(orientation) {
             hidedText.hidden = true
         }
-
+        
     }
+
+    
+=======
+>>>>>>> parent of d2484ad... Done
     
     func updateUI() {
         
@@ -130,7 +140,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         
         switch deviseSize {
         case 480: cellSize = 55 // 4
-        case 568: cellSize = 69 // 5
+        case 568: cellSize = 70 // 5
         case 667: cellSize = 83 // 6
         case 736: cellSize = 93 // plus
         default: cellSize = 100 // ipad
