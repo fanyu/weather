@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 import CoreData
 import UIKit
+import Social
 
 struct cGeneral {
     static let ChangeUnitNotification = "ChangeUnitNotification"
@@ -46,32 +47,25 @@ public class Response {
 
 public class weatherService {
     
-    static func retrieveForecast(latitude: CLLocationDegrees, longtitude: CLLocationDegrees, success: (response: Response) ->(), failure: (response: Response) ->()) {
-        let url = "http://api.openweathermap.org/data/2.5/forecast"
-        let params = ["lat":latitude, "lon":longtitude]
-        println(params)
+    static func shareToWeibo(view: UIView) ->SLComposeViewController {
+        var shareControler: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        shareControler.setInitialText("#WeatherBubble#")
+        let image = screenShot(view)
+        shareControler.addImage(image)
+        return shareControler
+    }
+    
+    static func screenShot(view: UIView) ->UIImage {
+        // create the uiimage
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, true, 0)
+        // get the context
+        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+        // get the image
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        UIGraphicsEndImageContext()
         
-        Alamofire.request(.GET, url, parameters: params)
-            .responseJSON { (request, response, json, error) in
-                if error != nil {
-                    var response = Response()
-                    response.status = .failure
-                    response.error = error
-                    failure(response: response)
-                    
-                    println("Error: \(error)")
-                    println(request)
-                    println(response)
-                } else {
-                    var json = JSON(json!)
-                    var response = Response()
-                    response.status = .success
-                    response.object = json
-                    success(response: response)
-                    
-                    println("Success: \(url)")
-                }
-        }
+        return image
     }
     
     static func conditionJudge(condition: Int) ->(condition: String, str: String){

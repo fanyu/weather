@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import CoreLocation
+import Social
 
 class RootViewController: UIViewController,CLLocationManagerDelegate {
     
@@ -100,6 +101,13 @@ class RootViewController: UIViewController,CLLocationManagerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func longPressButton(sender: AnyObject) {
+        println("hi, long press works")
+        var shareControler = weatherService.shareToWeibo(self.view)
+        self.presentViewController(shareControler, animated: true, completion: nil)
     }
     
     
