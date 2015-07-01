@@ -8,37 +8,31 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>Pods-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>69891D9CB5ACCA1BD811E381</key>
+		<key>43AD11772C853AD184EAA5A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C5BD5B49D297B8293C994A7</key>
+		<key>714ACA2FA488454A075CF6B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9A43B7A68A81040213FF397</key>
+		<key>CC2EA14E59312E067E83D68A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

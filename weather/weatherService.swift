@@ -111,7 +111,7 @@ public class weatherService {
         } else if condition == 800 {
             return ("晴朗", "好天气")
         } else if condition < 804 {
-            return ("少云", "墨镜呢")
+            return ("少云", "好天气")
         } else if condition == 804 {
             return ("多云", "挺凉快")
         } else if condition < 902 {

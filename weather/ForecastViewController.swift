@@ -27,6 +27,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //hidedText.hidden = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "needReloadData", name: cGeneral.NeedReloadForecastTVC, object: nil)
         updateUI()
