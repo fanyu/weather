@@ -145,13 +145,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0L-7m-Gop">
                                 <rect key="frame" x="289" y="566" width="22" height="22"/>
                                 <animations/>
-                                <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="b0A-hG-j6T" appends="YES" id="MSv-MO-6fh"/>
                                     <segue destination="dqP-h8-QNv" kind="presentation" id="Qt0-i3-pBL"/>
                                 </connections>
                             </button>
@@ -228,11 +226,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="b0A-hG-j6T">
-                    <connections>
-                        <action selector="longPressButton:" destination="vXZ-lx-hvc" id="0PF-4j-Nkd"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1021" y="-82"/>
         </scene>
